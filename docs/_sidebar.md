@@ -1,4 +1,5 @@
 * [Home](/)
+* [このハンズオンラボを始めるまえに必要な環境設定](step0.md)
 * [Azure OpenAI を使うための初期設定](step1.md)
 * [Azure OpenAI の基本的な機能を試してみる](step2.md)
 * [Azure OpenAI に自前のドキュメントを組み込む](step3.md)
