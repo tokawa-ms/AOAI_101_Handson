@@ -1,1 +1,1 @@
-# docsify やってみたテスト
+# Azure OpenAI 入門ハンズオンラボ
