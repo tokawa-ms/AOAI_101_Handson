@@ -6,7 +6,10 @@
 - 利用する Azure Subscription で Azure OpenAI の利用申請が完了している
 
 ## Azure OpenAI のアカウントを作成する
-ほげほげ
+Azure Portal から Azure OpenAI のアカウントを作る方法を書く。
 
 ## Azure OpenAI のアカウントが作成されたことを確認する
-ふがふが
+Portal からの確認方法を書く。
+
+## Azure OpenAI のモデルをデプロイする
+モデルのデプロイ方法を書く。
