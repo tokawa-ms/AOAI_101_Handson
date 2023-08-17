@@ -17,5 +17,12 @@
 ## Azure OpenAI Service へのアクセス申請
 会社から Azure の Subscription の払い出しを受けることが出来たら、[https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu](Azure OpenAI の利用申請)を実施ください。
 
+この申請の際には、みなさまの所属する会社から払い出しを受けた Azure Subscription の情報が必要になります。
+それ以外の Azure Subscription を登録いただいた場合、申請が迅速に受理されない場合がありますので、ご注意ください。
+
+> note
+> 正しく企業アカウントで申請をいただいた場合、承認に要する時間は凡そ 1 営業日以内になる場合が多いです
+> （筆者個人の過去の経験則であり、公式情報ではありません。）
+
 
 ## Visual Studio Code の準備
