@@ -46,7 +46,90 @@ Azure の Subscription の準備が出来たら、[Azure OpenAI の利用申請]
 !> 正しく企業アカウントで申請をいただいた場合、承認に要する時間は凡そ 1 営業日以内になる場合が多いです（筆者個人の過去の経験則であり、公式情報ではありません。）
 
 ## Azure CLI の準備
-Azure CLI のセットアップ方法について書く
+### Azure CLI のインストール
+Azure CLI のインストール方法は、OS によって様々です。
+詳細については[Azure CLI をインストールする方法](https://learn.microsoft.com/ja-jp/cli/azure/install-azure-cli) のドキュメントを確認いただき、自身の利用されている OS に合った方法でセットアップをお願いします。
+
+Azure CLI をインストールする方法
+
+https://learn.microsoft.com/ja-jp/cli/azure/install-azure-cli
+
+インストールが完了したら、コマンドプロンプトや PowerShell や bash など、シェルを立ち上げて下記のコマンドを入力して、期待通りの応答が得られるか確認しましょう。
+
+```cmd
+> az -v
+```
+
+```出力結果
+azure-cli                         2.51.0
+
+core                              2.51.0
+telemetry                          1.1.0
+
+Dependencies:
+msal                            1.24.0b1
+azure-mgmt-resource             23.1.0b2
+
+Python location 'C:\Program Files\Microsoft SDKs\Azure\CLI2\python.exe'
+Extensions directory 'C:\Users\user\.azure\cliextensions'
+
+Python (Windows) 3.10.10 (tags/v3.10.10:aad5f6a, Feb  7 2023, 17:20:36) [MSC v.1929 64 bit (AMD64)]
+
+Legal docs and information: aka.ms/AzureCliLegal
+
+
+Your CLI is up-to-date.
+```
+
+### Azure CLI にログイン
+Azure CLI が利用可能になったら、操作対象の環境にログインします。
+以下のコマンドを入力すると、ブラウザーでのログインを求められるので、有効な資格情報を入力すれば CLI へのログインが完了します。
+
+```bat
+> az login
+```
+
+すると、利用可能なサブスクリプションのリストが表示されますので、今回利用するサブスクリプションを見つけ "name" の項目をメモします。
+
+```出力結果
+]
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "<GUID>",
+    "id": "<GUID>",
+    "isDefault": false,
+    "managedByTenants": [
+      {
+        "tenantId": "<GUID>"
+      }
+    ],
+    "name": "ここにサブスクリプション名が入っているはずです",
+    "state": "Enabled",
+    "tenantId": "<GUID>",
+    "user": {
+      "name": "tokawa@microsoft.com",
+      "type": "user"
+    }
+  }
+]
+```
+
+なお、サブスクリプションのリストを見逃してしまった場合には、以下のコマンドで表形式で表示も可能です。
+
+```bat
+> az account list --output table --all
+```
+
+利用するサブスクリプションを選択するためのコマンドは以下の通りです。
+
+```bat
+> az account set --subscription サブスクリプション名
+```
+
+これで、コマンドラインツールから Azure の操作が出来るようになりました！
+
+## Azure Developer CLI をセットアップする
+
 ## Visual Studio Code の準備
 VS Code のセットアップ方法について書く
 
