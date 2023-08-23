@@ -89,7 +89,7 @@ Azure CLI が利用可能になったら、操作対象の環境にログイン�
 > az login
 ```
 
-すると、利用可能なサブスクリプションのリストが表示されますので、今回利用するサブスクリプションを見つけ "name" の項目をメモします。
+すると、利用可能なサブスクリプションのリストが表示されますので、今回利用するサブスクリプションを見つけ "name" の項目と、"id" の項目をメモします。
 
 ```出力結果
 ]
@@ -117,7 +117,7 @@ Azure CLI が利用可能になったら、操作対象の環境にログイン�
 なお、サブスクリプションのリストを見逃してしまった場合には、以下のコマンドで表形式で表示も可能です。
 
 ```bat
-> az account list --output table --all
+>  az account list --output table --query "[].[name,id]"
 ```
 
 利用するサブスクリプションを選択するためのコマンドは以下の通りです。
@@ -128,13 +128,83 @@ Azure CLI が利用可能になったら、操作対象の環境にログイン�
 
 これで、コマンドラインツールから Azure の操作が出来るようになりました！
 
-## Azure Developer CLI をセットアップする
+## Azure Developer CLI の準備
+### Azure Developer CLI のインストール
+Azure Developer CLI (azd) のインストール方法も、OS によって様々です。
+詳細については「[Azure Developer CLIをインストールまたは更新する](https://learn.microsoft.com/ja-jp/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows)」のドキュメント確認して、お使いの OS にあわせた方法でインストールを行ってください。
 
-## Visual Studio Code の準備
-VS Code のセットアップ方法について書く
+Azure Developer CLIをインストールまたは更新する
+
+https://learn.microsoft.com/ja-jp/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows
+
+インストールが完了したら、設定反映のために一回ターミナルを再起動してからこの先の手順を進めてください。
+
+### Azure Developer CLI へのログイン
+Azure Developer CLI (azd) のセットアップが完了したら、ターミナルを開いて以下のコマンドを実行し、Azure 環境にログインします。
+
+```bat
+> azd auth login
+```
+
+Azure CLI のログイン時と同じように、ブラウザーが自動的に立ち上がり認証を促されますので、Azure へのアクセス権のあるユーザーにてログインを行ってください。
+
+### Azure Developer CLI の初期設定
+azd セットアップ後のターミナル再起動が完了したら、以下のコマンドを実行し、操作対象のサブスクリプションを指定しつつ動作確認します。
+
+```bat
+azd config set defaults.subscription サブスクリプションID
+```
+!> サブスクリプション ID は、先ほど Azure CLI のセットアップ時にメモした id の値 (GUID) を入力します
 
 ## Python のインストール
-Python のインストール方法について書く
+今回のハンズオンでは、Python 3.9 で書かれたサンプルコードを利用します。（最新版にまだアップデートできておらずすみません！）
+
+[Python のダウンロードサイト](https://www.python.org/downloads/)から、お使いの OS に合った Python 3.9 系のインストーラーをダウンロードしてきて、インストールしてください。
+
+
+Download Python | Python.org
+
+https://www.python.org/downloads/
+
+>もしくは、Windows でしたら、Microsoft Store から Python と検索すると、各バージョンの Python のインストーラーが簡単に見つけられますので、そちらから入れていただいても構いません。
+![Python in MS Store](./img/PythonInstaller001.png)
 
 ## .NET SDK のインストール
-.NET SDK のインストール方法について書く
+.NET SDK のインストール方法について書く（いれなくてもいいかも？）
+
+## Visual Studio Code の準備
+### Visual Studio Code のインストール
+まずは[Visual Studio Code のダウンロードサイト](https://code.visualstudio.com/download)から、ご利用されている OS にあわせた Visual Studio Code をダウンロードし、インストーラーを実行してインストールします。
+
+Download Visual Studio Code
+
+https://code.visualstudio.com/download
+
+> VS Code のセットアップ時に、以下の追加タスクのダイアログの、上二つのチェックボックス（[Code で開く] アクションを追加する）にチェックを入れておくと、あとから VS Code を開くときに楽になりますのでおススメです。
+![VS Code Setup Dialog](./img/VSCodeSetup001.png)
+
+
+
+### Visual Studio Code に Extensions をインストールする
+VS Code への Extensions のインストールは、VS Code 起動後のサイドバーにある "Extensions" のアイコンから行います。
+下記スクリーンショットの赤枠で囲んだアイコンです。
+
+![VS Code Extensions](./img/VSCodeExt001.png)
+
+"Search Extensions in Marketplace" のテキストボックスから、名前検索が出来ますので、以下にリストした Extensions を探してインストールしてください。
+
+- Python
+- Python Extension Pack
+- Azure Tools
+  - Azure Tools のセットアップ途中で、azd のセットアップや Azure へのログインなど求められますが、以下 2 点進めて、あとは一番下の "Mark Done" をクリックして完了させてしまって構いません。
+
+完了したら、VS Code にフォーカスを当てた状態で <kbd>F1</kbd> キーを押して、"reload" と検索し "Developer: Reload Window" を実行し、VS Code に先ほどインストールしたプラグインが正しく読み込まれるようにしてください。
+
+# 補足情報
+## VS Code で Python を利用可能にするところまでのトレーニング
+Microsoft Learn に VS Code に Python をセットアップする部分をまとめた技術トレーニングがありました。
+こちらも是非参考にしてみてください。
+
+Visual Studio Code で Python を使ってみる
+
+https://learn.microsoft.com/ja-jp/training/modules/python-install-vscode/
