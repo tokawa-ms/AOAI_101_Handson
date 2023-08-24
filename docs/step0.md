@@ -162,15 +162,42 @@ azd config set defaults.subscription サブスクリプションID
 [Python のダウンロードサイト](https://www.python.org/downloads/)から、お使いの OS に合った Python 3.9 系のインストーラーをダウンロードしてきて、インストールしてください。
 
 
-Download Python | Python.org
-
+Download Python | Python.org<br>
 https://www.python.org/downloads/
 
->もしくは、Windows でしたら、Microsoft Store から Python と検索すると、各バージョンの Python のインストーラーが簡単に見つけられますので、そちらから入れていただいても構いません。
-![Python in MS Store](./img/PythonInstaller001.png)
+## Node.js のインストール
+今回のハンズオンでは、Node.js で書かれたサンプルコードも利用します。
+
+[Node.js のダウンロードサイト](https://nodejs.org/en/download) からお使いの OS にあった Node.js 最新版のインストーラーをダウンロードしてインストールしてください。
+
+Downloads | Node.js<br>
+https://nodejs.org/en/download
+
+## Git CLI のインストール
+今回のハンズオンではサンプルソースコードのダウンロードに Azure Developer CLI の機能を利用しますが、その内部で Git CLI が利用されているためインストールが必要です。
+
+[Git CLI のダウンロードサイト](https://git-scm.com/downloads) からお使いの OS にあわせた Git CLI のバージョンをダウンロードしてインストールしてください。
+
+> インストール時に色々聞かれますが、基本的には全てデフォルト設定で問題ないはずです。
+
+## PowerShell 7 のインストール
+Windows 環境でハンズオンを実施中の方は、PowerShell 7 のセットアップも必要です、
+
+[PowerShell 7 のダウンロードサイト](https://github.com/PowerShell/PowerShell/releases/tag/v7.3.6) よりインストーラーをダウンロードして、インストールしてください。
+
+PowerShell<br>
+https://github.com/PowerShell/PowerShell/releases/tag/v7.3.6
+
+インストール途中に出てくる下記ダイアログの、下二つのチェックは入れておくとコンテキストメニューから PowerShell を開けるようになっておススメです。
+![PowerShell のインストールオプション](./img/powershellinstall.png)
 
 ## .NET SDK のインストール
-.NET SDK のインストール方法について書く（いれなくてもいいかも？）
+今回のハンズオンのサンプルソースコードに、.NET 7.0 ベースのソリューションが含まれているためインストールが必要です。
+
+[.NET 7 のダウンロードサイト](https://dotnet.microsoft.com/ja-jp/download/dotnet/7.0) より最新の SDK をダウンロードしてインストールしてください。
+
+.NET SDK<br>
+https://dotnet.microsoft.com/ja-jp/download/dotnet/7.0
 
 ## Visual Studio Code の準備
 ### Visual Studio Code のインストール

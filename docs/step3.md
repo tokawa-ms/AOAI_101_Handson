@@ -82,7 +82,7 @@ Cognitive Search のデプロイが完了したら、プログラムから Cogni
 
 自動チャンク分け用のスクリプトについては、[以下のリポジトリ](https://github.com/tokawa-ms/AOAI_101_ChunkingScript_Python)に公開してありますので、ローカルにダウンロードして任意のディレクトリに展開ください。
 
-AOAI_101_ChunkingScript_Python
+AOAI_101_ChunkingScript_Python<br>
 https://github.com/tokawa-ms/AOAI_101_ChunkingScript_Python
 
 ダウンロードが完了しましたら、チャンク分けするデータならびに出力先のディレクトリの作成を行います。
@@ -139,7 +139,7 @@ $env:SEARCH_API_KEY="キーの情報"
 
 Get-ChildItem env:
 ```
->! PowerShell の場合、登録する名前やキーなどの文字列はダブルクォーテーションで囲む必要があります
+!> PowerShell の場合、登録する名前やキーなどの文字列はダブルクォーテーションで囲む必要があります
 
 環境変数の登録が終わりましたら、実際にスクリプトを流してインデックスの登録を行います。
 
@@ -164,10 +164,60 @@ Cognitive Search の画面に移動したら、左ペインより「インデッ
 ここで検索までうまく行ったら、日本語インデックスの作成は完了です！
 
 ### 出来たインデックスを Azure OpenAI Studio から接続する
-on your data で接続する。
+続いて、OpenAI Studio から Cognitive Search のインデックスの接続作業を行います。
+[OpenAI Studio](https://oai.azure.com/) に移動し、「チャット」の画面に遷移します。
+
+遷移した画面の「アシスタントのセットアップ」のところをクリックすると、以下の画面に切り替わります。
+
+![Add your data config](./img/addyourdata001.png)
+
+そうしたら、"Add a data source" のボタンをクリックして手順を先に進めます。
+まずはデータソースの選択となりますので、"Azure Cognitive Search" を選びましょう。
+
+すると、選択項目が増えますので、サブスクリプションは今回のハンズオンで利用しているものを選びます。そして、先ほど作った Cognitive Search のサービス名とインデックス名をドロップダウンから選択します。
+
+最後に、"I acknowledge that...." のチェックボックスを入れて、「次へ」をクリックします。
+
+![select datasource](./img/addyourdata002.png)
+
+次の画面では、Cognitive Search のどのフィールドを Azure OpenAI 側ではどの情報として扱うかのマッピングを行います。
+
+"Content Data" のフィールドのみが必須で、ここに Cognitive Search で検索されるデータの本文が入るようにします。
+今回のスクリプトを使って作った Cognitive Search であれば、"content" というフィールドがそれにあたりますので、指定します。
+他のフィールドは本来オプションなので何も入れなくて OK のはずなのですが、開発中のシステムの不具合なのか、データが入っていないと検索が引っかからないようなので、全て "Content Data" と同じフィールドで良いので適当に設定しておきます。
+
+![フィールドのマッピング](./img/addyourdata003.png)
+
+あとは全て「次へ」でそのまま進めていただければ問題ありません。
+
+!> 現状、Data management (optional) の項目は日本語非対応のため選択が出来ません。
+
+最後の項目まで進んだら「保存して閉じる」をクリックすれば、データの接続は完了です。
+![add your data 完了](./img/addyourdata004.png)
+
+このように、チャットの画面に接続されている Cognitive Search の名前が出ていましたら設定完了と判断できます。
+![準備完了](./img/addyourdata005.png)
 
 ### 試してみる
-まずは Playground で試してみる。
+まずは Playground で、独自のドキュメントの内容が検索されるか確認してみましょう。
+
+
 
 ### 企業向け GPT のサンプルをデプロイしてみる
 WebApp をデプロイしてみる。
+
+# 補足情報
+## データ準備スクリプト
+Microsoft では OSS で以下のファイル形式に対応したデータの準備とチャンキングを行う[サンプルスクリプト](https://github.com/microsoft/sample-app-aoai-chatGPT/tree/main)を提供しています。
+
+- .txt
+- .md
+- .html
+- Microsoft Word ファイル
+- Microsoft PowerPoint ファイル
+- PDF
+
+日本語動作未検証のため今回は利用しませんでしたが、もし良ければ活用いただければ幸いです。
+
+データ準備スクリプト<br>
+https://github.com/microsoft/sample-app-aoai-chatGPT/tree/main
