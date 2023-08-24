@@ -24,7 +24,7 @@ https://github.com/Azure-Samples/azure-search-openai-demo/
 その時に、TPM (アカウント毎に設定されている Token 上限) を超過しているとエラーになってしまうので、OpenAI Studio から既存のデプロイメントの TPM 割り当て数を 20-30 程度まで減らしておきます。
 
 [Azure OpenAI Studio](https://oai.azure.com/) にアクセスして、Quotas の画面を開き、Usage/Limit の状況が充分にあいていることを確認しましょう。
-![クォータ確認](./img/AOAIQuota001.pngAOAIQuota.png)
+![クォータ確認](./img/AOAIQuota001.png)
 
 もし割り当てが不足しそうでしたら、足りなくなりそうなモデルのクォータを展開すると、どのデプロイメントが TPM を割り当てられているのか確認できます。
 またそこでモデル名をクリックすることで、モデルに割り当てる TPM を変更することも可能です。
