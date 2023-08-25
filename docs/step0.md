@@ -5,6 +5,7 @@
 本ハンズオンは、以下の OS で実施することが可能です。
 - Windows 11 / 10
 - MacOS X
+  - BigSur 以上のバージョンでないと、XCode のバージョン非互換で CLI のインストールが出来ない場合があるようです。
 - Linux
 
 ## Azure Subscription の準備
