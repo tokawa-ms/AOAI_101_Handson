@@ -224,6 +224,7 @@ VS Code への Extensions のインストールは、VS Code 起動後のサイ�
 - Python Extension Pack
 - Azure Tools
   - Azure Tools のセットアップ途中で、azd のセットアップや Azure へのログインなど求められますが、以下 2 点進めて、あとは一番下の "Mark Done" をクリックして完了させてしまって構いません。
+- C#
 
 完了したら、VS Code にフォーカスを当てた状態で <kbd>F1</kbd> キーを押して、"reload" と検索し "Developer: Reload Window" を実行し、VS Code に先ほどインストールしたプラグインが正しく読み込まれるようにしてください。
 
