@@ -5,3 +5,4 @@
 * [Azure OpenAI に自前のドキュメントを組み込む (Embedding + Cognitive Search Version)](step3a.md)
 * [Azure OpenAI に自前のドキュメントを組み込む (Cognitive Search Version)](step3b.md)
 * [Azure OpenAI と AI オーケストレーターを使った賢いアプリケーションを実装する](step4.md)
+* [あとかたづけ](step999.md)
