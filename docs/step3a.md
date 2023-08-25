@@ -83,6 +83,10 @@ https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/bicep/overview?ta
 Bicep の基礎(Microsoft Learn の自習コンテンツ)<br>
 https://learn.microsoft.com/ja-jp/training/paths/fundamentals-bicep/
 
+### (Windows のみ) PowerShell 7 を開く
+この先で実行する手順は PowerShell 7 でないとエラーが発生して動作しない部分があります。
+そのため、Windows 環境の方は、スタートメニューから Step0 でインストールした PowerShell 7 のターミナルを開いて、この先の手順を行ってください。
+
 ### PowerShell スクリプトの実行権限の調整 (PowerShell で実行する方限定)
 サンプルコードのデプロイ中に使われる PowerShell スクリプトの中に、署名されていないものが紛れ込んでしまっているために、以下のコマンドでセキュリティポリシーの強度を一旦下げる必要があります。
 
