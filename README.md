@@ -1,11 +1,31 @@
 # Azure OpenAI 入門ハンズオンラボ
-このハンズオンラボでは、以下のことをカバーします。
+## カバーするトピック
+このハンズオンラボでは、以下のことをカバーしています。
 
 - このハンズオンラボを始めるまえに必要な環境設定
 - Azure OpenAI を使うための初期設定
 - Azure OpenAI の基本的な機能を試してみる
 - Azure OpenAI に自前のドキュメントを組み込む
 - Azure OpenAI を使った賢いアプリケーションを実装する
+
+## How to access
+以下の GitHub Pages に HTML 版はホストしてあります。ご活用ください。
+[Azure OpenAI 入門ハンズオンラボ](https://tokawa-ms.github.io/AOAI_101_Handson/#/)
+
+## How to contribute
+このドキュメントは、ドキュメントサイトジェネレータの [docsify](https://docsify.js.org/#/) を使って作っています。
+
+もし追記したい事項や修正したい事項がありましたら、まずは以下のコマンドで本リポジトリをクローンしていただき、別ブランチで作業の上、Pull Request をいただければと思います。
+
+```
+git clone https://github.com/tokawa-ms/AOAI_101_Handson.git
+```
+
+なお、ローカル環境で docsify を使ったときの見栄えをチェックしたい場合、docsify-cli をインストール済みの環境で、以下のコマンドを実行することで可能です。
+
+```
+docsify server ./docs
+```
 
 ## 制限事項
 
