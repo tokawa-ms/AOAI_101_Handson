@@ -10,6 +10,7 @@
 
 ## How to access
 以下の GitHub Pages に HTML 版はホストしてあります。ご活用ください。
+
 [Azure OpenAI 入門ハンズオンラボ](https://tokawa-ms.github.io/AOAI_101_Handson/#/)
 
 ## How to contribute
