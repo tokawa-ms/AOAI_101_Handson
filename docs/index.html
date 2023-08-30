@@ -16,7 +16,22 @@
       repo: '',
       loadSidebar: true,
       subMaxLevel: 4,
-      coverpage: 'cover.md'
+      coverpage: 'cover.md',
+      plugins: [
+        function editButton(hook, vm) {
+          hook.beforeEach(function (html) {
+            var url = 'https://github.com/tokawa-ms/AOAI_101_Handson/blob/main/docs/' + vm.route.file;
+            var editHtml = '[📝 EDIT DOCUMENT](' + url + ')\n';
+
+            return (
+              editHtml +
+              html +
+              '\n----\n' +
+              editHtml
+            );
+          });
+        },
+      ],
     }
   </script>
   <!-- Docsify v4 -->
