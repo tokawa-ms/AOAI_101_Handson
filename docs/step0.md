@@ -51,8 +51,7 @@ Azure の Subscription の準備が出来たら、[Azure OpenAI の利用申請]
 Azure CLI のインストール方法は、OS によって様々です。
 詳細については[Azure CLI をインストールする方法](https://learn.microsoft.com/ja-jp/cli/azure/install-azure-cli) のドキュメントを確認いただき、自身の利用されている OS に合った方法でセットアップをお願いします。
 
-Azure CLI をインストールする方法
-
+Azure CLI をインストールする方法<br>
 https://learn.microsoft.com/ja-jp/cli/azure/install-azure-cli
 
 インストールが完了したら、コマンドプロンプトや PowerShell や bash など、シェルを立ち上げて下記のコマンドを入力して、期待通りの応答が得られるか確認しましょう。
@@ -134,8 +133,7 @@ Azure CLI が利用可能になったら、操作対象の環境にログイン�
 Azure Developer CLI (azd) のインストール方法も、OS によって様々です。
 詳細については「[Azure Developer CLIをインストールまたは更新する](https://learn.microsoft.com/ja-jp/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows)」のドキュメント確認して、お使いの OS にあわせた方法でインストールを行ってください。
 
-Azure Developer CLIをインストールまたは更新する
-
+Azure Developer CLIをインストールまたは更新する<br>
 https://learn.microsoft.com/ja-jp/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows
 
 インストールが完了したら、設定反映のために一回ターミナルを再起動してからこの先の手順を進めてください。
@@ -204,8 +202,7 @@ https://dotnet.microsoft.com/ja-jp/download/dotnet/7.0
 ### Visual Studio Code のインストール
 まずは[Visual Studio Code のダウンロードサイト](https://code.visualstudio.com/download)から、ご利用されている OS にあわせた Visual Studio Code をダウンロードし、インストーラーを実行してインストールします。
 
-Download Visual Studio Code
-
+Download Visual Studio Code<br>
 https://code.visualstudio.com/download
 
 > VS Code のセットアップ時に、以下の追加タスクのダイアログの、上二つのチェックボックス（[Code で開く] アクションを追加する）にチェックを入れておくと、あとから VS Code を開くときに楽になりますのでおススメです。
@@ -224,7 +221,7 @@ VS Code への Extensions のインストールは、VS Code 起動後のサイ�
 - Python
 - Python Extension Pack
 - Azure Tools
-  - Azure Tools のセットアップ途中で、azd のセットアップや Azure へのログインなど求められますが、以下 2 点進めて、あとは一番下の "Mark Done" をクリックして完了させてしまって構いません。
+  - Azure Tools のセットアップ途中で、azd のセットアップや Azure へのログインなど求められますが、最低限 Azure へのログインさえ出来ていればあとは必要な時に必要な操作を求められるはずなので、一番下の "Mark Done" をクリックして完了させてしまって構いません。
 - C#
 
 完了したら、VS Code にフォーカスを当てた状態で <kbd>F1</kbd> キーを押して、"reload" と検索し "Developer: Reload Window" を実行し、VS Code に先ほどインストールしたプラグインが正しく読み込まれるようにしてください。
@@ -234,6 +231,11 @@ VS Code への Extensions のインストールは、VS Code 起動後のサイ�
 Microsoft Learn に VS Code に Python をセットアップする部分をまとめた技術トレーニングがありました。
 こちらも是非参考にしてみてください。
 
-Visual Studio Code で Python を使ってみる
-
+Visual Studio Code で Python を使ってみる<br>
 https://learn.microsoft.com/ja-jp/training/modules/python-install-vscode/
+
+## VS Code で Azure にアクセスする部分の公式ドキュメント
+Azure 開発用に VS Code をセットアップする方法はこちらにもまとまっていますのでご確認ください。
+
+Azure 開発用に Visual Studio Code を構成する<br>
+https://learn.microsoft.com/ja-jp/dotnet/azure/configure-vs-code
