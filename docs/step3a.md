@@ -62,13 +62,13 @@ https://github.com/tokawa-ms/busho-index
 しかし、gpt-35-turbo では日本語の大規模な PDF ドキュメントを引用するには不十分で、トークン数不足のエラーが発生する場合があるので、自動デプロイが行われる Azure OpenAI のモデルを "gpt-35-turbo-16k" に変更してしまいましょう。
 
 変更するコードは、サンプルコードを展開したディレクトリの下にある、"infra" ディレクトリにありますので、そのディレクトリを開きましょう。
-ディレクトリ内にある "main.bicep" ファイルを開き、51 行目あたりにある "param chatGptModelName" から始まる行を探してください。
+ディレクトリ内にある "main.bicep" ファイルを開き、61 行目あたりにある "param chatGptModelName" から始まる行を探してください。
 
-現状では、`param chatGptModelName string = 'gpt-35-turbo'` と入力されていると思いますが、ここを `param chatGptModelName string = 'gpt-35-turbo-16k'` と変更します。
+現状では、`param chatGptModelName string = (openAiHost == 'azure') ? 'gpt-35-turbo' : 'gpt-35-turbo'` と入力されていると思いますが、ここを `param chatGptModelName string = (openAiHost == 'azure') ? 'gpt-35-turbo-16k' : 'gpt-35-turbo-16k'` と変更します。
 
 変更したら、ファイルを保存して変更を確定してください。
 
-![Bicep の設定変更](./img/bicepupdate001.png)
+![Bicep の設定変更](./img/bicepupdate001a.png)
 
 #### 補足 : Bicep とはなにか？
 Bicep は、宣言型の構文を使用して Azure リソースをデプロイするドメイン固有言語 (DSL) です。 Bicep ファイル内で、Azure にデプロイするインフラストラクチャを定義し、そのファイルを開発ライフサイクル全体にわたって使用して、インフラストラクチャを繰り返しデプロイします。 リソースは一貫した方法でデプロイされます。
