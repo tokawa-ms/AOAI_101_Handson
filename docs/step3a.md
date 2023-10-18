@@ -98,6 +98,12 @@ https://learn.microsoft.com/ja-jp/training/paths/fundamentals-bicep/
 サンプルコードを Azure にデプロイする為に、Azure Developer CLI を実行します。
 
 ```bat
+# To use Japanese languages
+azd env set AZURE_SEARCH_QUERY_LANGUAGE ja-jp
+azd env set AZURE_SEARCH_QUERY_SPELLER none
+azd env set AZURE_SEARCH_ANALYZER_NAME ja.lucene
+
+# Deploy
 azd up
 ```
 
